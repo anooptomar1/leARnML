@@ -111,11 +111,10 @@ extension ViewController: UIGestureRecognizerDelegate {
         var object = VirtualObject()
         
         for virtualElementObject in VirtualObject.MLecules {
-            //print("NewestTop:", newestTop2)
-            //if (newestTop2["water bottle"] != nil)  && (newestTop2["water bottle"]! > Double(0.3)) {
+            print("NewestTop:", newestTop2)
+            if (newestTop2["water bottle"] != nil)  && (newestTop2["water bottle"]! > Double(0.3)) {
             object = virtualElementObject
-             //   print("KDJLFKJS")
-            //}
+            }
         }
         virtualObjectLoader.loadVirtualObject(object, loadedHandler: { [unowned self] loadedObject in
             DispatchQueue.main.async {

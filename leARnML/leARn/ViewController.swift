@@ -320,7 +320,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     /// Updates the UI with the results of the classification.
     /// - Tag: ProcessClassifications
     func processClassifications(for request: VNRequest, error: Error?) {
-        DispatchQueue.main.async {
+        //DispatchQueue.main.async {
             guard let results = request.results else {
                 print("Unable to classify image.\n \(error!.localizedDescription)")
                 return
@@ -341,7 +341,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     print("newestTop after classif", self.newestTop2)
                 }
                 print("Classification:", descriptions)
-            }
+            //}
         }
     }
 }
