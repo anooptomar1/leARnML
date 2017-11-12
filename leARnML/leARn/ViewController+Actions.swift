@@ -98,26 +98,24 @@ extension ViewController: UIGestureRecognizerDelegate {
         
         
         let pixbuff : CVPixelBuffer? = sceneView.session.currentFrame?.capturedImage
-        let handler = VNImageRequestHandler(cvPixelBuffer: pixbuff!, options: [:])
+        let ciImage = CIImage(cvPixelBuffer: pixbuff!)
+        let handler = VNImageRequestHandler(ciImage: ciImage, options: [:])
         do {
             try handler.perform([self.classificationRequest])
         } catch {
             print("Bad request")
         }
         
-        
         statusViewController.cancelScheduledMessage(for: .contentPlacement)
         virtualObjectLoader.removeAllVirtualObjects()
         var object = VirtualObject()
         
-        print("lkadjl object")
         for virtualElementObject in VirtualObject.MLecules {
-            /*
-            if virtualElementObject.modelName == classificationRequest.results {
-                object = virtualElementObject
-            }
- */
+            //print("NewestTop:", newestTop2)
+            //if (newestTop2["water bottle"] != nil)  && (newestTop2["water bottle"]! > Double(0.3)) {
             object = virtualElementObject
+             //   print("KDJLFKJS")
+            //}
         }
         virtualObjectLoader.loadVirtualObject(object, loadedHandler: { [unowned self] loadedObject in
             DispatchQueue.main.async {

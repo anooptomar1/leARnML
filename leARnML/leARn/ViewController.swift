@@ -82,6 +82,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
     ]
     
+    var newestTop2 = [String: Double]()
+    
     // MARK: - UI Elements
     
     var focusSquare = FocusSquare()
@@ -331,10 +333,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
             } else {
                 // Display top classifications ranked by confidence in the UI.
                 let topClassifications = classifications.prefix(2)
-                print(topClassifications)
+                self.newestTop2 = [String: Double]()
                 let descriptions = topClassifications.map { classification in
-                    // Formats the classification for display; e.g. "(0.37) cliff, drop, drop-off".
-                    print("(%.2f) %@", classification.confidence, classification.identifier)
+                    // Formats the classification for display; e.g. "(0.37) cliff, drop, drop-off"
+                    self.newestTop2[classification.identifier] = Double(classification.confidence)
+                    print(String(classification.confidence) + classification.identifier)
+                    print("newestTop after classif", self.newestTop2)
                 }
                 print("Classification:", descriptions)
             }
