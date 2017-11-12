@@ -96,7 +96,8 @@ extension ViewController: UIGestureRecognizerDelegate {
     
     @IBAction func coreMLProcess () {
         
-        let pixbuff : CVPixelBuffer? = (sceneView.session.currentFrame?.capturedImage)
+        
+        let pixbuff : CVPixelBuffer? = sceneView.session.currentFrame?.capturedImage
         let handler = VNImageRequestHandler(cvPixelBuffer: pixbuff!, options: [:])
         do {
             try handler.perform([self.classificationRequest])
@@ -104,23 +105,26 @@ extension ViewController: UIGestureRecognizerDelegate {
             print("Bad request")
         }
         
-        print(classificationRequest.results?.prefix(2))
         
         statusViewController.cancelScheduledMessage(for: .contentPlacement)
         virtualObjectLoader.removeAllVirtualObjects()
         var object = VirtualObject()
-        /*
+        
+        print("lkadjl object")
         for virtualElementObject in VirtualObject.MLecules {
+            /*
             if virtualElementObject.modelName == classificationRequest.results {
                 object = virtualElementObject
             }
+ */
+            object = virtualElementObject
         }
         virtualObjectLoader.loadVirtualObject(object, loadedHandler: { [unowned self] loadedObject in
             DispatchQueue.main.async {
                 self.hideObjectLoadingUI()
                 self.placeVirtualObject(loadedObject)
             }
-        })*/
+        })
         
     }
 
