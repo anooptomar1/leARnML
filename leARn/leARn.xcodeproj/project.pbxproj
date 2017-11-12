@@ -25,6 +25,7 @@
 		46BFAD391FB77676009286C7 /* VirtualObjectSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BFAD371FB77676009286C7 /* VirtualObjectSelection.swift */; };
 		46BFAD3B1FB77760009286C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BFAD3A1FB77760009286C7 /* AppDelegate.swift */; };
 		46BFAD471FB866E2009286C7 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 46BFAD461FB866E2009286C7 /* MobileNet.mlmodel */; };
+		46BFAD491FB86A02009286C7 /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BFAD481FB86A02009286C7 /* CGImagePropertyOrientation+UIImageOrientation.swift */; };
 		72E952591FB7845800112D68 /* VirtualObjectLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E952571FB7845700112D68 /* VirtualObjectLoader.swift */; };
 		72E9525A1FB7845800112D68 /* VirtualObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E952581FB7845700112D68 /* VirtualObject.swift */; };
 /* End PBXBuildFile section */
@@ -50,6 +51,7 @@
 		46BFAD371FB77676009286C7 /* VirtualObjectSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualObjectSelection.swift; sourceTree = "<group>"; };
 		46BFAD3A1FB77760009286C7 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46BFAD461FB866E2009286C7 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
+		46BFAD481FB86A02009286C7 /* CGImagePropertyOrientation+UIImageOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGImagePropertyOrientation+UIImageOrientation.swift"; sourceTree = "<group>"; };
 		72E952571FB7845700112D68 /* VirtualObjectLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualObjectLoader.swift; sourceTree = "<group>"; };
 		72E952581FB7845700112D68 /* VirtualObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,6 +89,7 @@
 				46BFAD3A1FB77760009286C7 /* AppDelegate.swift */,
 				46BFACDB1FB7702B009286C7 /* art.scnassets */,
 				46BFACDD1FB7702B009286C7 /* ViewController.swift */,
+				46BFAD481FB86A02009286C7 /* CGImagePropertyOrientation+UIImageOrientation.swift */,
 				46BFAD461FB866E2009286C7 /* MobileNet.mlmodel */,
 				46BFAD011FB774BE009286C7 /* ViewController+ARSCNViewDelegate.swift */,
 				46BFACFF1FB774A7009286C7 /* ViewController+Actions.swift */,
@@ -214,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46BFAD381FB77676009286C7 /* StatusViewController.swift in Sources */,
+				46BFAD491FB86A02009286C7 /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */,
 				46BFAD331FB77608009286C7 /* FocusSquare.swift in Sources */,
 				46BFAD3B1FB77760009286C7 /* AppDelegate.swift in Sources */,
 				46BFAD081FB774CA009286C7 /* VirtualObjectARView.swift in Sources */,
