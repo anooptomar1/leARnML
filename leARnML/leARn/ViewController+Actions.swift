@@ -7,6 +7,10 @@ UI Actions for the main view controller.
 
 import UIKit
 import SceneKit
+import ARKit
+import CoreML
+import Vision
+import ImageIO
 
 extension ViewController: UIGestureRecognizerDelegate {
     
@@ -27,6 +31,8 @@ extension ViewController: UIGestureRecognizerDelegate {
         //isHidden/isEnabled Code
         periodicAddObject.isHidden = true
         periodicAddObject.isEnabled = false
+        coreMLTriggerButton.isHidden = true
+        coreMLTriggerButton.isEnabled = false
         
     }
     
@@ -43,6 +49,8 @@ extension ViewController: UIGestureRecognizerDelegate {
         elementTextField.isEnabled = true
         elementSendButton.isHidden = false
         elementSendButton.isEnabled = true
+        coreMLTriggerButton.isHidden = true
+        coreMLTriggerButton.isEnabled = false
         
     }
         
@@ -70,6 +78,53 @@ extension ViewController: UIGestureRecognizerDelegate {
         periodicAddObject.isEnabled = false
         
     }
+    
+    @IBAction func coreMLActivate() {
+        
+        coreMLTriggerButton.isHidden = true
+        coreMLTriggerButton.isEnabled = false
+        coreMLPictureButton.isHidden = false
+        coreMLPictureButton.isEnabled = true
+        periodicAddObject.isHidden = true
+        periodicAddObject.isEnabled = false
+        addObjectButton.isHidden = true
+        addObjectButton.isEnabled = false
+        
+        
+        
+    }
+    
+    @IBAction func coreMLProcess () {
+        
+        let pixbuff : CVPixelBuffer? = (sceneView.session.currentFrame?.capturedImage)
+        let handler = VNImageRequestHandler(cvPixelBuffer: pixbuff!, options: [:])
+        do {
+            try handler.perform([self.classificationRequest])
+        } catch {
+            print("Bad request")
+        }
+        
+        print(classificationRequest.results?.prefix(2))
+        
+        statusViewController.cancelScheduledMessage(for: .contentPlacement)
+        virtualObjectLoader.removeAllVirtualObjects()
+        var object = VirtualObject()
+        /*
+        for virtualElementObject in VirtualObject.MLecules {
+            if virtualElementObject.modelName == classificationRequest.results {
+                object = virtualElementObject
+            }
+        }
+        virtualObjectLoader.loadVirtualObject(object, loadedHandler: { [unowned self] loadedObject in
+            DispatchQueue.main.async {
+                self.hideObjectLoadingUI()
+                self.placeVirtualObject(loadedObject)
+            }
+        })*/
+        
+    }
+
+    
     
     /// Determines if the tap gesture for presenting the `VirtualObjectSelectionViewController` should be used.
     func gestureRecognizerShouldBegin(_: UIGestureRecognizer) -> Bool {
@@ -104,6 +159,10 @@ extension ViewController: UIGestureRecognizerDelegate {
         elementTextField.isEnabled = false
         elementSendButton.isHidden = true
         elementSendButton.isEnabled = false
+        coreMLTriggerButton.isHidden = false
+        coreMLTriggerButton.isEnabled = true
+        coreMLPictureButton.isHidden = true
+        coreMLPictureButton.isEnabled = false
 
         // Disable restart for a while in order to give the session time to restart.
         DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {

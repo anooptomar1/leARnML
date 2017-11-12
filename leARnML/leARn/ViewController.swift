@@ -50,6 +50,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var elementTextField: UITextField!
     
+    @IBOutlet weak var coreMLTriggerButton: UIButton!
+    
+    @IBOutlet weak var coreMLPictureButton: UIButton!
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // Dismisses the Keyboard by making the text field resign
         // first responder
@@ -129,6 +133,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         elementTextField.isEnabled = false
         elementSendButton.isHidden = true
         elementSendButton.isEnabled = false
+        coreMLPictureButton.isHidden = true
+        coreMLPictureButton.isEnabled = false
+        
         
         
         /*
@@ -268,6 +275,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     /// - Tag: MLModelSetup
     lazy var classificationRequest: VNCoreMLRequest = {
+        var results = [String]()
         do {
             /*
              Use the Swift class `MobileNet` Core ML generates from the model.
@@ -277,13 +285,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
             let model = try VNCoreMLModel(for: MobileNet().model)
             
             let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
-                self?.processClassifications(for: request, error: error)
+                results = (self?.processClassifications(for: request, error: error))!
             })
             request.imageCropAndScaleOption = .centerCrop
             return request
         } catch {
             fatalError("Failed to load Vision ML model: \(error)")
         }
+        
     }()
     
     /// - Tag: PerformRequests
@@ -310,28 +319,28 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     /// Updates the UI with the results of the classification.
     /// - Tag: ProcessClassifications
-    func processClassifications(for request: VNRequest, error: Error?) {
+    func processClassifications(for request: VNRequest, error: Error?) -> [String] {
+        var descriptions = [String]()
         DispatchQueue.main.async {
             guard let results = request.results else {
-               "Unable to classify image.\n\(error!.localizedDescription)"
+               print("Unable to classify image.\n\(error!.localizedDescription)")
                 return
             }
             // The `results` will always be `VNClassificationObservation`s, as specified by the Core ML model in this project.
             let classifications = results as! [VNClassificationObservation]
-            
+            print("Classifications", classifications)
             if classifications.isEmpty {
-                "Nothing recognized."
+                print("Nothing recognized.")
             } else {
                 // Display top classifications ranked by confidence in the UI.
                 let topClassifications = classifications.prefix(2)
-                let descriptions = topClassifications.map { classification in
+                descriptions = topClassifications.map { classification in
                     // Formats the classification for display; e.g. "(0.37) cliff, drop, drop-off".
-                    return String(format: "  (%.2f) %@", classification.confidence, classification.identifier)
+                    return String(classification.identifier)
                 }
-                "Classification:\n" + descriptions.joined(separator: "\n")
             }
         }
+        return descriptions
     }
-    
 }
 

@@ -131,7 +131,7 @@
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcf-ic-uGo" userLabel="Add Object Button">
-                                <rect key="frame" x="20" y="419" width="48" height="48"/>
+                                <rect key="frame" x="20" y="463" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="NZv-Ts-4dl"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="PpS-fh-6mY"/>
@@ -145,11 +145,33 @@
                                     <action selector="showVirtualObjectSelectionViewController" destination="BV1-FR-VrT" eventType="touchUpInside" id="zNz-qB-P16"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1p-sc-WNG" userLabel="Add Object Button">
+                                <rect key="frame" x="20" y="339" width="48" height="48"/>
+                                <state key="normal" image="brain">
+                                    <color key="titleColor" red="0.85882352939999995" green="0.72941176470000002" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="coreMLActivate" destination="BV1-FR-VrT" eventType="touchUpInside" id="M6J-yL-f4Z"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Th-rZ-xA0" userLabel="Add Object Button">
+                                <rect key="frame" x="159" y="599" width="56" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="lEY-ce-f22"/>
+                                    <constraint firstAttribute="height" constant="48" id="uXx-oc-94r"/>
+                                </constraints>
+                                <state key="normal" image="photoButtonImage">
+                                    <color key="titleColor" red="0.85882352939999995" green="0.72941176470000002" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="coreMLProcess" destination="BV1-FR-VrT" eventType="touchUpInside" id="UaP-mP-fV3"/>
+                                </connections>
+                            </button>
                             <activityIndicatorView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="3cb-dQ-oXx">
-                                <rect key="frame" x="23" y="422" width="43" height="43"/>
+                                <rect key="frame" x="23" y="465" width="43" height="43"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YKQ-0w-dey" userLabel="Add Object Button">
-                                <rect key="frame" x="20" y="278" width="48" height="48"/>
+                                <rect key="frame" x="20" y="205" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="fOQ-nB-JIa"/>
                                     <constraint firstAttribute="width" constant="48" id="sfa-JH-hka"/>
@@ -172,21 +194,22 @@
                                 </connections>
                             </slider>
                             <activityIndicatorView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="BUj-O8-1Ox">
-                                <rect key="frame" x="32" y="283" width="20" height="43"/>
+                                <rect key="frame" x="32" y="207" width="20" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="Fs2-gA-Zgx"/>
                                 </constraints>
                             </activityIndicatorView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="nql-uv-igk">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="nql-uv-igk">
                                 <rect key="frame" x="23" y="617" width="67" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="67" id="Z5m-x1-cMw"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXu-3a-qnS">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXu-3a-qnS">
                                 <rect key="frame" x="106" y="615" width="46" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="send-button"/>
                                 <connections>
                                     <action selector="showElement" destination="BV1-FR-VrT" eventType="touchUpInside" id="HiU-qW-eXx"/>
@@ -195,25 +218,37 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xcf-ic-uGo" firstAttribute="top" secondItem="YKQ-0w-dey" secondAttribute="bottom" constant="93" id="77k-qw-T2P"/>
+                            <constraint firstItem="3Th-rZ-xA0" firstAttribute="leading" secondItem="fXu-3a-qnS" secondAttribute="trailing" constant="7" id="4oz-NN-tkj"/>
+                            <constraint firstItem="xcf-ic-uGo" firstAttribute="top" secondItem="YKQ-0w-dey" secondAttribute="bottom" constant="210" id="77k-qw-T2P"/>
+                            <constraint firstItem="3Th-rZ-xA0" firstAttribute="centerX" secondItem="tnx-rc-95S" secondAttribute="centerX" id="9dY-ei-CRt"/>
+                            <constraint firstAttribute="bottom" secondItem="3Th-rZ-xA0" secondAttribute="bottom" constant="20" symbolic="YES" id="A5D-e8-PF6"/>
+                            <constraint firstItem="nql-uv-igk" firstAttribute="leading" secondItem="3cb-dQ-oXx" secondAttribute="leading" id="BFm-aA-ZTs"/>
                             <constraint firstItem="3cb-dQ-oXx" firstAttribute="width" secondItem="xcf-ic-uGo" secondAttribute="width" constant="-5" id="Fg7-D6-Eh5"/>
                             <constraint firstAttribute="trailing" secondItem="R5W-V8-6lY" secondAttribute="trailing" id="J42-1v-Ihf"/>
                             <constraint firstItem="xcf-ic-uGo" firstAttribute="leading" secondItem="GBj-4O-Whc" secondAttribute="leading" constant="20" id="JPo-jk-gSh"/>
                             <constraint firstItem="3cb-dQ-oXx" firstAttribute="centerX" secondItem="xcf-ic-uGo" secondAttribute="centerX" id="KPf-Pf-2mp"/>
-                            <constraint firstItem="GBj-4O-Whc" firstAttribute="bottom" secondItem="xcf-ic-uGo" secondAttribute="bottom" constant="200" id="M0y-bK-lcJ"/>
-                            <constraint firstItem="BUj-O8-1Ox" firstAttribute="bottom" secondItem="YKQ-0w-dey" secondAttribute="bottom" id="PpK-XC-kaN"/>
+                            <constraint firstItem="GBj-4O-Whc" firstAttribute="bottom" secondItem="xcf-ic-uGo" secondAttribute="bottom" constant="156" id="M0y-bK-lcJ"/>
+                            <constraint firstItem="BUj-O8-1Ox" firstAttribute="bottom" secondItem="YKQ-0w-dey" secondAttribute="bottom" constant="-3" id="PpK-XC-kaN"/>
+                            <constraint firstItem="GBj-4O-Whc" firstAttribute="bottom" secondItem="fXu-3a-qnS" secondAttribute="bottom" constant="17" id="RVc-Ru-H3C"/>
                             <constraint firstItem="tnx-rc-95S" firstAttribute="top" secondItem="GBj-4O-Whc" secondAttribute="top" id="Sdx-fT-fqG"/>
+                            <constraint firstItem="K1p-sc-WNG" firstAttribute="top" secondItem="YKQ-0w-dey" secondAttribute="bottom" constant="86" id="YLO-Lj-oSR"/>
                             <constraint firstItem="R5W-V8-6lY" firstAttribute="leading" secondItem="RLh-bf-1c3" secondAttribute="leading" id="Yj0-Fo-B5n"/>
+                            <constraint firstItem="fXu-3a-qnS" firstAttribute="centerY" secondItem="nql-uv-igk" secondAttribute="centerY" id="bHt-HD-AbL"/>
                             <constraint firstItem="E6c-py-dvH" firstAttribute="top" secondItem="RLh-bf-1c3" secondAttribute="top" id="boO-ZZ-neH"/>
                             <constraint firstItem="GBj-4O-Whc" firstAttribute="trailing" secondItem="E6c-py-dvH" secondAttribute="trailing" id="brT-qF-Rdk"/>
                             <constraint firstItem="tnx-rc-95S" firstAttribute="leading" secondItem="GBj-4O-Whc" secondAttribute="leading" id="cGf-LE-hzb"/>
                             <constraint firstItem="BUj-O8-1Ox" firstAttribute="leading" secondItem="GBj-4O-Whc" secondAttribute="leading" constant="32" id="d5O-X3-zlL"/>
                             <constraint firstItem="3cb-dQ-oXx" firstAttribute="centerY" secondItem="xcf-ic-uGo" secondAttribute="centerY" id="dtP-zr-OKq"/>
+                            <constraint firstItem="xcf-ic-uGo" firstAttribute="top" secondItem="K1p-sc-WNG" secondAttribute="bottom" constant="76" id="e49-8V-q7O"/>
+                            <constraint firstItem="K1p-sc-WNG" firstAttribute="leading" secondItem="xcf-ic-uGo" secondAttribute="leading" id="f10-l2-Jgf"/>
                             <constraint firstItem="R5W-V8-6lY" firstAttribute="top" secondItem="RLh-bf-1c3" secondAttribute="top" id="fDn-zw-Oo2"/>
+                            <constraint firstItem="fXu-3a-qnS" firstAttribute="leading" secondItem="nql-uv-igk" secondAttribute="trailing" constant="16" id="g8N-6g-QoN"/>
+                            <constraint firstItem="nql-uv-igk" firstAttribute="bottom" secondItem="3Th-rZ-xA0" secondAttribute="bottom" id="hgg-R0-UAe"/>
                             <constraint firstAttribute="bottom" secondItem="E6c-py-dvH" secondAttribute="bottom" id="kLb-BI-xJ4"/>
                             <constraint firstItem="GBj-4O-Whc" firstAttribute="bottom" secondItem="iyi-ga-ogb" secondAttribute="bottom" constant="320" id="pSE-GX-muS"/>
                             <constraint firstAttribute="bottom" secondItem="R5W-V8-6lY" secondAttribute="bottom" id="poH-DX-LIv"/>
                             <constraint firstItem="iyi-ga-ogb" firstAttribute="leading" secondItem="BUj-O8-1Ox" secondAttribute="trailing" constant="115" id="rNg-4a-Fli"/>
+                            <constraint firstItem="K1p-sc-WNG" firstAttribute="trailing" secondItem="xcf-ic-uGo" secondAttribute="trailing" id="sy3-Dc-zGE"/>
                             <constraint firstItem="3cb-dQ-oXx" firstAttribute="height" secondItem="xcf-ic-uGo" secondAttribute="height" constant="-5" id="szW-aA-CXv"/>
                             <constraint firstItem="E6c-py-dvH" firstAttribute="leading" secondItem="GBj-4O-Whc" secondAttribute="leading" id="wEL-Op-yTe"/>
                             <constraint firstItem="YKQ-0w-dey" firstAttribute="leading" secondItem="xcf-ic-uGo" secondAttribute="leading" id="xPS-80-5hK"/>
@@ -224,6 +259,8 @@
                     <connections>
                         <outlet property="addObjectButton" destination="xcf-ic-uGo" id="uFa-W2-4Iu"/>
                         <outlet property="blurView" destination="R5W-V8-6lY" id="oF2-lD-Srf"/>
+                        <outlet property="coreMLPictureButton" destination="3Th-rZ-xA0" id="RDb-Uf-SNN"/>
+                        <outlet property="coreMLTriggerButton" destination="K1p-sc-WNG" id="zFC-hP-e9n"/>
                         <outlet property="elementSendButton" destination="fXu-3a-qnS" id="aNi-xQ-pZD"/>
                         <outlet property="elementTextField" destination="nql-uv-igk" id="ymi-AW-2L0"/>
                         <outlet property="periodicAddObject" destination="YKQ-0w-dey" id="mfZ-Or-o5G"/>
@@ -306,8 +343,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="brain" width="290" height="271"/>
         <image name="ellipsis" width="256" height="256"/>
         <image name="pImage" width="800" height="800"/>
+        <image name="photoButtonImage" width="614" height="512"/>
         <image name="restart" width="20" height="23"/>
         <image name="restartPressed" width="20" height="23"/>
         <image name="send-button" width="16" height="16"/>

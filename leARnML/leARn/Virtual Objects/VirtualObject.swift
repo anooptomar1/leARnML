@@ -142,6 +142,20 @@ extension VirtualObject {
         }
     }()
     
+    static let MLecules: [VirtualObject] = {
+        let modelsURL = Bundle.main.url(forResource: "art.scnassets/MLecules", withExtension: nil)!
+        
+        let fileEnumerator = FileManager().enumerator(at: modelsURL, includingPropertiesForKeys: [])!
+        
+        return fileEnumerator.flatMap { element in
+            let url = element as! URL
+            
+            guard url.pathExtension == "scn" else { return nil }
+            
+            return VirtualObject(url: url)
+        }
+    }()
+    
     static let misc: [VirtualObject] = {
         let modelsURL = Bundle.main.url(forResource: "art.scnassets/misc", withExtension: nil)!
         

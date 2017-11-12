@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		464C3B681FB86EE100ECD858 /* ViewController+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BFACFF1FB774A7009286C7 /* ViewController+Actions.swift */; };
 		46BFACDC1FB7702B009286C7 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 46BFACDB1FB7702B009286C7 /* art.scnassets */; };
 		46BFACDE1FB7702B009286C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BFACDD1FB7702B009286C7 /* ViewController.swift */; };
 		46BFACE31FB7702B009286C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46BFACE21FB7702B009286C7 /* Assets.xcassets */; };
 		46BFACE61FB7702B009286C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BFACE41FB7702B009286C7 /* LaunchScreen.storyboard */; };
 		46BFACEE1FB770F1009286C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BFACED1FB770F0009286C7 /* Main.storyboard */; };
-		46BFAD001FB774A8009286C7 /* ViewController+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BFACFF1FB774A7009286C7 /* ViewController+Actions.swift */; };
 		46BFAD021FB774BE009286C7 /* ViewController+ARSCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BFAD011FB774BE009286C7 /* ViewController+ARSCNViewDelegate.swift */; };
 		46BFAD071FB774CA009286C7 /* ThresholdPanGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BFAD031FB774CA009286C7 /* ThresholdPanGesture.swift */; };
 		46BFAD081FB774CA009286C7 /* VirtualObjectARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BFAD041FB774CA009286C7 /* VirtualObjectARView.swift */; };
@@ -225,8 +225,8 @@
 				72E9525A1FB7845800112D68 /* VirtualObject.swift in Sources */,
 				46BFACDE1FB7702B009286C7 /* ViewController.swift in Sources */,
 				46BFAD1C1FB774F3009286C7 /* Utilities.swift in Sources */,
+				464C3B681FB86EE100ECD858 /* ViewController+Actions.swift in Sources */,
 				46BFAD471FB866E2009286C7 /* MobileNet.mlmodel in Sources */,
-				46BFAD001FB774A8009286C7 /* ViewController+Actions.swift in Sources */,
 				46BFAD071FB774CA009286C7 /* ThresholdPanGesture.swift in Sources */,
 				72E952591FB7845800112D68 /* VirtualObjectLoader.swift in Sources */,
 				46BFAD341FB77608009286C7 /* FocusSquareSegment.swift in Sources */,
@@ -362,10 +362,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AHE4Q7G57S;
+				DEVELOPMENT_TEAM = F2PUCLQGKS;
 				INFOPLIST_FILE = leARn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lroth.leARn;
+				PRODUCT_BUNDLE_IDENTIFIER = v.leARn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -377,10 +377,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AHE4Q7G57S;
+				DEVELOPMENT_TEAM = F2PUCLQGKS;
 				INFOPLIST_FILE = leARn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lroth.leARn;
+				PRODUCT_BUNDLE_IDENTIFIER = v.leARn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
